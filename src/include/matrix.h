@@ -63,7 +63,7 @@ public:
   Matrix Minor(int row, int column) const;
   Matrix InverseMatrix() const;
 
-  void ShowMatrix();
+  void show();
 };
 }; // namespace LinearAlgebra
 
@@ -98,7 +98,7 @@ LinearAlgebra::Matrix<T>::Matrix(LinearAlgebra::Matrix<T> &&other) {
 
 template <typename T> LinearAlgebra::Matrix<T>::~Matrix() { delete[] matrix; }
 
-template <typename T> void LinearAlgebra::Matrix<T>::ShowMatrix() {
+template <typename T> void LinearAlgebra::Matrix<T>::show() {
   std::cout << std::setw(columns * 5) << "====<<<MATRIX>>>====" << std::endl;
   for (int i = 0; i != rows; ++i) {
     for (int j = 0; j != columns; ++j) {
